@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>INST377 Lab 4</title>
+    <style>
+        .textBoxes {
+            border: 5px solid black;
+            padding: 15px;
+            margin: 5px;
+            width: 50%;
+            background-color: yellow;
+
+        }
+
+    </style>
+</head>
+<body style="background-color: aquamarine;" >
+
+    <h1 id="page-heading">INST377- Lab 4 </h1>
+
+    <div class="textBoxes">
+
+        <form>
+
+            <label>Name:</label>
+            <input type="text" id="name" required>
+            <button type="button" onclick="sendAlert()">Alert Me!</button>
+
+        </form>
+
+    </div>
+
+    <script>        
+        function sendAlert() {
+
+            var name = document.getElementById('name').value;
+            alert(`You look nice ${name}!`);
+
+        }
+    </script>
+
+<div class="textBoxes">
+
+    <button onclick="addText()">Add Text</button>
+
+</div>
+
+<script>
+
+    function addText() {
+        var heading = document.getElementById('page-heading');
+        heading.textContent += ' Adding Text';
+    }
+
+</script>
+
+<div class="textBoxes">
+
+    <form id>
+
+        <label >Text Tester:</label>
+        <input type="text" id="text-input">
+        <button type="button" onclick="validText()">Validate Text</button>
+
+    </form>
+
+</div>
+
+<script>
+        function validText() {
+            var text = document.getElementById('text-input').value;
+            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if (validation.test(text)) {
+                alert("You ain't valid!");
+            }
+        }
+</script>
+
+    <div class="textBoxes">
+
+        <button onclick="changeColor()">Change Color</button>
+
+    </div>
+
+    <script>
+        
+        let blue = true;
+        function changeColor() {
+            document.body.style.backgroundColor = blue ? 'green' : 'blue';
+            if (blue == false) {
+                blue = true
+            }
+            else {
+                blue = false
+            }
+            
+        }
+
+    </script>
+
+</body>
+</html>
